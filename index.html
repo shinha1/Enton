@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enton - GDPR Compliance Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-utility-bar">
+        <div class="logo">Enton</div>
+        <div class="year">2024</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+            <span class="progress-text">0% Compliant</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Compliance Steps</h2>
+            <ul class="nav-steps">
+                <li class="completed">Step 1: Collect Personal Data <span class="icon">✓</span></li>
+                <li class="ongoing">Step 2: Consent Management <span class="icon">→</span></li>
+                <li class="pending">Step 3: Data Access Requests <span class="icon">•</span></li>
+                <li class="pending">Step 4: Data Deletion and Retention <span class="icon">•</span></li>
+                <li class="pending">Step 5: Employee Training <span class="icon">•</span></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Enter Compliance Information</h2>
+            <form id="compliance-form">
+                <label for="company-name">Company Name:</label>
+                <input type="text" id="company-name" placeholder="Enter your company name" required>
+
+                <label for="address">Company Address:</label>
+                <input type="text" id="address" placeholder="Enter your company address" required>
+
+                <label for="data-processing">Data Processing Categories:</label>
+                <input type="text" id="data-processing" placeholder="e.g., Marketing, HR, Sales">
+
+                <label for="contact-details">Data Protection Contact:</label>
+                <input type="text" id="contact-details" placeholder="Enter contact name and email" required>
+
+                <span class="tooltip">All fields marked with * are required.</span>
+
+                <div class="form-buttons">
+                    <button type="button" class="back-button">Back</button>
+                    <button type="submit" class="next-button">Next</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+</body>
+</html>
