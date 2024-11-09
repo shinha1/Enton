@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enton - GDPR Compliance Tool</title>
+    <title>GDPR Compliance Survey</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
         <div class="logo">Enton</div>
         <div class="year">2024</div>
         <div class="progress-bar">
-            <div class="progress"></div>
-            <span class="progress-text">0% Compliant</span>
+            <div id="progress" class="progress"></div>
+            <span id="progress-text" class="progress-text">0% Compliant</span>
         </div>
     </div>
 
@@ -21,38 +21,41 @@
         <aside class="sidebar">
             <h2>Compliance Steps</h2>
             <ul class="nav-steps">
-                <li class="completed">Step 1: Collect Personal Data <span class="icon">✓</span></li>
-                <li class="ongoing">Step 2: Consent Management <span class="icon">→</span></li>
-                <li class="pending">Step 3: Data Access Requests <span class="icon">•</span></li>
-                <li class="pending">Step 4: Data Deletion and Retention <span class="icon">•</span></li>
-                <li class="pending">Step 5: Employee Training <span class="icon">•</span></li>
+                <li id="step1" class="pending">Step 1: Data Collection</li>
+                <li id="step2" class="pending">Step 2: Consent Management</li>
+                <li id="step3" class="pending">Step 3: Data Access Requests</li>
+                <li id="step4" class="pending">Step 4: Data Retention</li>
+                <li id="step5" class="pending">Step 5: Data Breach Procedures</li>
             </ul>
         </aside>
 
         <main class="content">
-            <h2>Enter Compliance Information</h2>
-            <form id="compliance-form">
-                <label for="company-name">Company Name:</label>
-                <input type="text" id="company-name" placeholder="Enter your company name" required>
-
-                <label for="address">Company Address:</label>
-                <input type="text" id="address" placeholder="Enter your company address" required>
-
-                <label for="data-processing">Data Processing Categories:</label>
-                <input type="text" id="data-processing" placeholder="e.g., Marketing, HR, Sales">
-
-                <label for="contact-details">Data Protection Contact:</label>
-                <input type="text" id="contact-details" placeholder="Enter contact name and email" required>
-
-                <span class="tooltip">All fields marked with * are required.</span>
-
+            <h2>GDPR Compliance Survey</h2>
+            <div id="question-container">
+                <p id="question-text"></p>
+                <form id="survey-form">
+                    <label>
+                        <input type="radio" name="answer" value="Yes" required> Yes
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="No"> No
+                    </label>
+                    <label>
+                        <input type="radio" name="answer" value="Sometimes"> Sometimes
+                    </label>
+                </form>
                 <div class="form-buttons">
-                    <button type="button" class="back-button">Back</button>
-                    <button type="submit" class="next-button">Next</button>
+                    <button type="button" class="back-button" onclick="previousQuestion()">Back</button>
+                    <button type="button" class="next-button" onclick="nextQuestion()">Next</button>
                 </div>
-            </form>
+            </div>
+            <div id="advice-summary" style="display: none;">
+                <h3>Advice Summary</h3>
+                <ul id="advice-list"></ul>
+            </div>
         </main>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

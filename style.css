@@ -186,3 +186,8 @@ input[type="text"]:invalid {
 .next-button:hover {
     background-color: #0056b3;
 }
+
+.nav-steps li.completed {
+    background-color: #28a745; /* Stronger green */
+    color: white;
+}
